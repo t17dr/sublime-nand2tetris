@@ -7,6 +7,9 @@ Syntax definition for the hack computer assembly language and snippets coming so
 
 ## Installation
 
-Download or clone the repository and copy files to C:\Users\%Username%\AppData\Roaming\Sublime Text 2\Packages\nand2tetris
+Download or clone the repository and copy files to:
+* **Windows:** C:\Users\%Username%\AppData\Roaming\Sublime Text 2\Packages\nand2tetris
+* **Linux:** ~/.config/sublime-text-2/Packages/nand2tetris
+* **OS X:** ~/Library/Application Support/Sublime Text 2/Packages/nand2tetris
 
 `git clone https://github.com/t17dr/sublime-nand2tetris.git`
