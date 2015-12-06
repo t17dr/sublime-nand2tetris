@@ -1,0 +1,51 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: HDL
+scopeName: text.hdl
+fileTypes: [hdl]
+uuid: 149c1eba-ff47-402a-925d-83eb2a5552f4
+
+patterns:
+- comment: Block comment
+  name: comment.block.hdl
+  begin: \/\*
+  end: \*\/
+
+- comment: Line comment
+  name: comment.line.hdl
+  begin: \/\/
+  end: \n
+
+- comment: keywords
+  name: keyword.hdl
+  match: IN|OUT|PARTS
+
+- comment: true, false
+  name: constant.language.hdl
+  match: true|false
+
+- comment: bus index
+  match: \[([\d]+)\]  
+  captures:
+    '1': {name: constant.numeric.hdl} 
+
+- comment: .. in bus slicing
+  match: \[(\d+\.{2}\d+)\]  
+  captures:
+    '1': {name: constant.numeric.hdl}
+
+- comment: chip name
+  name: storage.type.hdl
+  match: 'CHIP'
+
+- comment: inner chip
+  match: ([\w\d\_]+)\s*\( 
+  captures:
+    '1': {name: entity.name.function.hdl} 
+
+- comment: inner chip inputs and outputs
+  match: ([\w\d\_]+)=
+  captures:
+    '1': {name: variable.parameter.hdl}
+
+...
