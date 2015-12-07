@@ -1,0 +1,33 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Hack assembler
+scopeName: source.hack_assembler
+fileTypes: [asm]
+uuid: f861d637-283f-43ad-87c2-621cc67cd130
+
+patterns:
+- comment: Line comment
+  name: comment.line.hdl
+  begin: \/\/
+  end: \n
+
+- comment: keywords
+  name: variable.parameter.hdl
+  match: null|M|D|A|MD|AM|AD|AMD
+
+- comment: keywords
+  name: keyword.other.hdl
+  match: JGT|JLE|JEQ|JLT|JNE|JMP|JGE
+
+- comment: predefined symbols
+  name: constant.language.hdl
+  match: \@R0|\@R1|\@R2|\@R3|\@R4|\@R5|\@R6|\@R7|\@R8|\@R9|\@R10|\@R11|\@R12|\@R13|\@R14|\@R15|\@SP|\@LCL|\@ARG|\@THIS|\@THAT|\@SCREEN|\@KBD
+
+- comment: A instruction user labels and variable symbols
+  name: constant.character.hdl
+  match: \@[a-zA-Z\_\.\$\:]+[a-zA-Z\_\.\$\:\d]*
+
+- comment: goto symbol
+  name: entity.name.function.hdl
+  match: \([a-zA-Z\_\.\$\:]+[a-zA-Z\_\.\$\:\d]*\)
+...
